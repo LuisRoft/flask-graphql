@@ -1,0 +1,24 @@
+type Product {
+  id: Int!
+  name: String!
+  price: Float!
+  quantity: Int!
+  available: Boolean!
+}
+
+type UpdateResponse {
+  product: Product
+  success: Boolean!
+  message: String!
+}
+
+type Query {
+  products: [Product]!
+  product(id: Int!): UpdateResponse!
+}
+
+type Mutation {
+  updateProductStock(id: Int!, quantity: Int!): UpdateResponse!
+  addProduct(name: String!, price: Float!, quantity: Int!): UpdateResponse!
+  deleteProduct(id: Int!): UpdateResponse!
+}
