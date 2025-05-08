@@ -69,6 +69,7 @@ query {
     price
     quantity
     available
+    imageUrl
   }
 }
 ```
@@ -85,6 +86,7 @@ query {
       price
       quantity
       available
+      imageUrl
     }
     message
   }
@@ -95,7 +97,7 @@ query {
 
 ```graphql
 mutation {
-  addProduct(name: "Nuevo Producto", price: 299.99, quantity: 10) {
+  addProduct(name: "Nuevo Producto", price: 299.99, quantity: 10, imageUrl) {
     success
     message
     product {
@@ -104,6 +106,7 @@ mutation {
       price
       quantity
       available
+      imageUrl
     }
   }
 }

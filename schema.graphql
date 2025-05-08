@@ -4,6 +4,7 @@ type Product {
   price: Float!
   quantity: Int!
   available: Boolean!
+  imageUrl: String!
 }
 
 type UpdateResponse {
@@ -19,6 +20,11 @@ type Query {
 
 type Mutation {
   updateProductStock(id: Int!, quantity: Int!): UpdateResponse!
-  addProduct(name: String!, price: Float!, quantity: Int!): UpdateResponse!
+  addProduct(
+    name: String!
+    price: Float!
+    quantity: Int!
+    imageUrl: String!
+  ): UpdateResponse!
   deleteProduct(id: Int!): UpdateResponse!
 }

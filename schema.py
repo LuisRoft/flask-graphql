@@ -33,13 +33,14 @@ def resolve_update_product_stock(_, info, id, quantity):
     }
 
 @mutation.field("addProduct")
-def resolve_add_product(_, info, name, price, quantity):
+def resolve_add_product(_, info, name, price, quantity, imageUrl):
     new_product = {
         "id": len(products) + 1,
         "name": name,
         "price": price,
         "quantity": quantity,
-        "available": quantity > 0
+        "available": quantity > 0,
+        "imageUrl": imageUrl
     }
 
     product = add_product(new_product)

@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, request   
 from ariadne import  graphql_sync
+from flask_cors import CORS
 from ariadne.explorer import ExplorerGraphiQL
 from schema import schema
 
 app = Flask(__name__)
-
+CORS(app)  
+ 
 explorer_html = ExplorerGraphiQL().html(None)
 
 @app.route('/')
