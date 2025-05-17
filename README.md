@@ -138,3 +138,42 @@ mutation {
   }
 }
 ```
+
+## Pruebas
+
+El proyecto incluye un conjunto completo de pruebas unitarias y de integración que verifican tanto las funciones utilitarias como los endpoints GraphQL.
+
+### Ejecutar las Pruebas
+
+Para ejecutar las pruebas, asegúrate de tener el entorno virtual activado y ejecuta uno de los siguientes comandos:
+
+```bash
+python -m unittest test.py
+```
+
+o simplemente:
+
+```bash
+python test.py
+```
+
+### ¿Qué se Prueba?
+
+1. **Funciones Utilitarias**
+
+   - Obtención de todos los productos
+   - Obtención de producto por ID
+   - Actualización de stock de productos
+   - Agregar y eliminar productos
+
+2. **Endpoints GraphQL**
+   - Consulta de todos los productos
+   - Consulta de producto individual
+   - Mutación para actualizar stock
+
+### Notas Importantes
+
+- No es necesario tener el servidor en ejecución para ejecutar las pruebas
+- Las pruebas utilizan un cliente de pruebas de Flask (`test_client()`)
+- Cada prueba se ejecuta en un entorno aislado gracias a `setUp` y `tearDown`
+- Los datos de prueba se restauran después de cada test
